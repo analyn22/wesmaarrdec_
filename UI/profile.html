@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- Meta Tags -->
+		<meta name="author" content="Reigen Onizuka" />
+		<meta name="description" content="Description of the Website" />
+
+		<!-- Website Icon -->
+		<link rel="icon" href="" type="image/x-icon" />
+
+		<!-- Website Title -->
+		<title>Title Here</title>
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" />
+
+		<!-- Swiper CSS -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+		<!-- Boxicon CSS -->
+		<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+		<!-- Main CSS -->
+		<link rel="stylesheet" href="static/css/style.css" />
+	</head>
+
+	<body>
+		<header class="header" data-header>
+			<div class="container">
+				<a href="index.html" class="header_logo">
+					<img src="images/WESMAARRDEC.png" alt="WESMAARRDEC Logo" />
+					<h1>WESMAARRDEC</h1>
+				</a>
+
+				<button class="nav-toggle-btn" data-nav-toggler data-nav-toggle-btn aria-label="Toggle menu">
+					<span class="line line-1"></span>
+					<span class="line line-2"></span>
+				</button>
+
+				<nav class="navbar" data-navbar>
+					<ul role="list" class="navbar-list">
+						<li>
+							<a href="index.html" class="navbar-link">Home</a>
+						</li>
+
+						<li>
+							<a href="profile.html" class="navbar-link active">Profile</a>
+						</li>
+
+						<li>
+							<a href="moa.html" class="navbar-link">MOA</a>
+						</li>
+
+						<li>
+							<a href="#" class="navbar-link">Event</a>
+						</li>
+
+						<li>
+							<a href="memorandum.html" class="navbar-link">Memorandum</a>
+						</li>
+
+						<li>
+							<a href="#" class="navbar-link">Comm. Letter</a>
+						</li>
+
+						<li>
+							<a href="#" class="navbar-link">Special Order</a>
+						</li>
+
+						<li>
+							<a href="#" class="navbar-link">Logout</a>
+						</li>
+					</ul>
+				</nav>
+
+				<div class="overlay" data-nav-toggler data-overlay></div>
+			</div>
+		</header>
+
+		<main>
+			<div class="container">
+				<h2 class="head-text">USER PROFILE</h2>
+
+				<div class="row pt-5">
+					<!-- LEFT CONTENT -->
+					<div class="col-lg-4 pt-3">
+						<div class="ucard text-center">
+							<div class="ucard__body dev">
+								<img class="avatar--lg" src="images/test.jpg" />
+								<h2 class="dev__name">Peter Parker</h2>
+								<p class="dev__title">peterparker@gmail.com</p>
+								<a href="#" class="ubtn">Edit Profile</a>
+							</div>
+						</div>
+					</div>
+
+					<!-- RIGHT CONTENT -->
+					<div class="col-lg-8 pt-3">
+						<div class="devInfo px-5 mb-5">
+							<div class="settings">
+								<h3 class="settings__title">Personal Information</h3>
+								<a class="tag tag--pill tag--sub settings__btn tag--lg" href="#"><i class="im im-plus"></i> Edit</a>
+							</div>
+							<div class="devSkill mt-5">
+								<h4 class="devSkill__title">Email:</h4>
+								<p class="devSkill__info">dev@gmail.com</p>
+							</div>
+							<div class="devSkill">
+								<h4 class="devSkill__title">Employee #:</h4>
+								<p class="devSkill__info">0000000</p>
+							</div>
+							<div class="devSkill">
+								<h4 class="devSkill__title">Gender:</h4>
+								<p class="devSkill__info">Male</p>
+							</div>
+							<div class="devSkill">
+								<h4 class="devSkill__title">Nationality:</h4>
+								<p class="devSkill__info">Filipino</p>
+							</div>
+							<div class="devSkill">
+								<h4 class="devSkill__title">Occupation:</h4>
+								<p class="devSkill__info">Student</p>
+							</div>
+							<div class="devSkill">
+								<h4 class="devSkill__title">Birth Date:</h4>
+								<p class="devSkill__info">April 1, 2001</p>
+							</div>
+							<div class="devSkill">
+								<h4 class="devSkill__title">Present Address:</h4>
+								<p class="devSkill__info">Zamboanga City, Philippines</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+
+
+		<!-- Swiper JS -->
+		<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+		<script src="static/js/main.js"></script>
+	</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>WESMAARRDEC</title>
+
+		<link rel="icon" href="{% static 'images/WESMAARRDEC.png' %}" type="image/x-icon" />
+		<link rel="stylesheet" href="{% static 'css/cred.css' %}" type="text/css" />
+	</head>
+
+	<body>
+		<div class="auth">
+			<div class="bg"></div>
+			<div class="bg bg2"></div>
+			<div class="bg bg3"></div>
+	
+			<div class="card">
+				<div class="auth_header text-center">
+					<a href="{% url 'home' %}"><img style="height: 25%; width: 25%" src="{% static 'images/WESMAARRDEC.png' %}" alt="WESMAARRDEC Logo" /></a>
+					<h3>WESMAARRDEC</h3>
+				</div>
+
+				{% if messages %} {% for message in messages %}
+				<p style="text-align: center; justify-content: center; color: red">{{ message }}</p>
+				{% endfor %} {% endif %}
+				<form action="" method="POST" autocomplete="off" class="form auth_form">
+					{% csrf_token %}
+					<div class="form_field">
+						<label for="">Username</label>
+						<input class="input input-text" id="username" type="text" name="username" value="{{data.username}}" />
+					</div>
+
+					<div class="form_field">
+						<label for="">Password</label>
+						<input class="input input-password" id="password" type="password" name="password" />
+					</div>
+
+					<div class="auth_actions text-center">
+						<button class="btn btn-sub btn-lg" type="submit">Login</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

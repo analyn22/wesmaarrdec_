@@ -1,0 +1,133 @@
+DROP DATABASE IF EXISTS wesmaarrdec;
+CREATE DATABASE wesmaarrdec CHARACTER SET utf8;
+USE wesmaarrdec;
+SHOW TABLES;
+
+-- FOR DOCUMENT ARCHIVING AND MANAGEMENT SYSTEM
+CREATE TABLE memorandum (
+	memo_no VARCHAR(10) PRIMARY KEY,
+	memo_date DATE NOT NULL,
+	memo_to VARCHAR(100),
+	memo_to_pos VARCHAR(100),
+	memo_thru VARCHAR(100),
+	memo_thru_pos VARCHAR(100),
+	memo_from VARCHAR(100),
+	memo_from_pos VARCHAR(100),
+	memo_subject VARCHAR(255),
+	memo_content TEXT,
+	memo_recomm_by VARCHAR(50),
+	memo_approved_by VARCHAR(50),
+	memo_file VARCHAR(255),
+	created_at DATETIME DEFAULT NULL,
+	created_by VARCHAR(50),
+	modified_at DATETIME DEFAULT NULL,
+	modified_by VARCHAR(50)
+);
+
+CREATE TABLE special_orders (
+	so_no VARCHAR(10) PRIMARY KEY,
+	so_date DATE,
+	so_subject VARCHAR(255),
+	so_content TEXT,
+	so_for INT, -- researcher or secretariat
+	so_signedby VARCHAR(100),
+	so_file VARCHAR(255),
+	created_at DATETIME DEFAULT NULL,
+	created_by VARCHAR(50),
+	modified_at DATETIME DEFAULT NULL,
+	modified_by VARCHAR(50)
+);
+
+CREATE TABLE comm_letters (
+	letter_no INT PRIMARY KEY,
+	letter_to VARCHAR(100),
+	letter_from VARCHAR(100),
+	subject VARCHAR(255),
+	received_by VARCHAR(100),
+	received_date DATETIME,
+	letter_notedby VARCHAR(100),
+	letter_recom_approval VARCHAR(100),
+	letter_approved_by VARCHAR(100),
+	letter_file VARCHAR(255),
+	created_at DATETIME DEFAULT NULL,
+	created_by VARCHAR(50),
+	modified_at DATETIME DEFAULT NULL,
+	modified_by VARCHAR(50)
+);
+
+CREATE TABLE moau (
+	moau_no INT PRIMARY KEY,
+	title VARCHAR(255),
+	approved_date DATE,
+	objective TEXT,
+	notarized_by VARCHAR(255),
+	notarized_date DATE,
+	moau_file VARCHAR(255),
+	created_at DATETIME DEFAULT NULL,
+	created_by VARCHAR(50),
+	modified_at DATETIME DEFAULT NULL,
+	modified_by VARCHAR(50)
+);
+
+CREATE TABLE moau_parties (
+	moauparties_id INT AUTO_INCREMENT PRIMARY KEY,
+	moau_no INT NOT NULL,
+	agency VARCHAR(255) NOT NULL,
+	represented_by VARCHAR(100),
+	position VARCHAR(50),
+	address VARCHAR(255),
+	referred_to_as VARCHAR(100),
+	created_at DATETIME DEFAULT NULL,
+	created_by VARCHAR(50),
+	modified_at DATETIME DEFAULT NULL,
+	modified_by VARCHAR(50),
+	CONSTRAINT ucmoau_parties UNIQUE (moau_no, agency),
+	CONSTRAINT fkmoau_parties FOREIGN KEY (moau_no) REFERENCES  moau(moau_no)
+);
+
+CREATE TABLE moau_signatories (
+	mousgn_id INT AUTO_INCREMENT PRIMARY KEY,
+	moau_no INT NOT NULL,
+	signed_by VARCHAR(50) NOT NULL,
+	position VARCHAR(50),
+	agency VARCHAR(255),
+	created_at DATETIME DEFAULT NULL,
+	created_by VARCHAR(50),
+	modified_at DATETIME DEFAULT NULL,
+	modified_by VARCHAR(50),
+	CONSTRAINT ucmoau_sign UNIQUE (moau_no, signed_by),
+	CONSTRAINT fkmoau_sign FOREIGN KEY (moau_no) REFERENCES  moau(moau_no)
+);
+
+CREATE TABLE event (
+	event_id INT PRIMARY KEY,
+	event_name VARCHAR(255) NOT NULL,
+	event_agenda VARCHAR(255),
+	event_date DATE,
+	venue VARCHAR(255),
+	no_participants INT,
+	impl_agency INT,
+	attendance_file VARCHAR(255),
+	created_at DATETIME DEFAULT NULL,
+	created_by VARCHAR(50),
+	modified_at DATETIME DEFAULT NULL,
+	modified_by VARCHAR(50),
+	CONSTRAINT fkevent_impl FOREIGN KEY (impl_agency) REFERENCES agency(agency_id)
+);
+
+CREATE TABLE event_agencies (
+	eventagency_id INT AUTO_INCREMENT PRIMARY KEY,
+	event_id INT,
+	agency_id INT,
+	agency_role VARCHAR(30), 
+	created_at DATETIME DEFAULT NULL,
+	created_by VARCHAR(50),
+	modified_at DATETIME DEFAULT NULL,
+	modified_by VARCHAR(50),
+	CONSTRAINT ucevent_agencies UNIQUE(event_id,agency_id),
+	CONSTRAINT fkevent_agencies FOREIGN KEY (event_id) REFERENCES event(event_id),
+	CONSTRAINT fkevent_agency FOREIGN KEY (agency_id) REFERENCES agency(agency_id)
+);
+
+
+

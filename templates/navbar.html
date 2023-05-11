@@ -1,0 +1,66 @@
+{% load static %}
+
+<header class="header" data-header>
+	<div class="container">
+		{% if request.user.is_authenticated %}
+		<button class="nav-toggle-btn" data-nav-toggler data-nav-toggle-btn aria-label="Toggle menu">
+			<span class="line line-1"></span>
+			<span class="line line-2"></span>
+		</button>
+
+		<nav class="navbar" data-navbar>
+			<ul role="list" class="navbar-list">
+				<li>
+					<a href="{% url 'home' %}" class="navbar-link {% if navbar == 'home' %}active{% endif %}">Dashboard</a>
+				</li>
+
+				<li>
+					<a href="{% url 'profile' %}" class="navbar-link {% if navbar == 'profile' %}active{% endif %}">Profile</a>
+				</li>
+
+				<li>
+					<a href="{% url 'moas' %}" class="navbar-link {% if navbar == 'moa' %}active{% endif %}">MOA</a>
+				</li>
+
+				<li>
+					<a href="{% url 'events' %}" class="navbar-link {% if navbar == 'events' %}active{% endif %}">Event</a>
+				</li>
+
+				<li>
+					<a href="{% url 'memorandums' %}" class="navbar-link {% if navbar == 'memorandum' %}active{% endif %}">Memorandum</a>
+				</li>
+
+				<li>
+					<a href="{% url 'comm-letters' %}" class="navbar-link {% if navbar == 'letters' %}active{% endif %}">Comm. Letter</a>
+				</li>
+
+				<li>
+					<a href="{% url 'special-orders' %}" class="navbar-link {% if navbar == 'orders' %}active{% endif %}">Special Order</a>
+				</li>
+
+				<li>
+					<a href="{% url 'about' %}" class="navbar-link {% if navbar == 'about' %}active{% endif %}">About Us</a>
+				</li>
+
+				<li>
+					<a href="{% url 'logout' %}" class="navbar-link">Sign Out</a>
+				</li>
+			</ul>
+		</nav>
+
+		<div class="overlay" data-nav-toggler data-overlay></div>
+
+		<a href="{% url 'home' %}" class="header_logo">
+			<img src="{% static 'images/WESMAARRDEC.png' %}" alt="WESMAARRDEC Logo" />
+			<h1>WESMAARRDEC</h1>
+		</a>
+		{% else %}
+		<nav class="header_menu">
+			<a href="{% url 'login' %}">
+				<img src="{% static 'images/avatar.svg' %}" alt="" />
+				<p>Login</p>
+			</a>
+		</nav>
+		{% endif %}
+	</div>
+</header>

@@ -1,0 +1,386 @@
+/* Fonts AUTH */
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400&family=Poppins:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+:root {
+	--color-darkgray: #2d2d39;
+	--color-darkred: #b31d34;
+
+	--color-main: #5aa5b9;
+	--color-sub: #3f4156;
+	--color-sub-light: #51546e;
+	--color-sub-lighter: #ededfd;
+	--color-text: #737373;
+	--color-light: #e5e7eb;
+	--color-bg: #f8fafd;
+	--color-white: #fffefd;
+
+	--font-base: "Poppins", arial, helvetica, "Segoe UI", roboto, ubuntu, sans-serif;
+	--font-regular: 300;
+	--font-medium: 500;
+	--font-bold: 700;
+}
+
+/* CSS Reset */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-rendering: optimizeSpeed;
+	font: inherit;
+}
+
+html:focus-within {
+	scroll-behavior: smooth;
+}
+
+html {
+	font-size: 50%;
+}
+
+@media only screen and (min-width: 480px) {
+	html {
+		font-size: 56.25%;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	html {
+		font-size: 62.5%;
+	}
+}
+
+@media only screen and (min-width: 2100px) {
+	html {
+		font-size: 75%;
+	}
+}
+
+body {
+	line-height: 1.5;
+	font-weight: 400;
+	font-size: 1.5rem;
+	color: var(--color-text);
+	background-color: var(--color-bg);
+	min-height: 100vh;
+}
+
+img {
+	width: 100%;
+}
+
+h3 {
+	font-size: 3.2rem;
+	font-weight: var(--font-medium);
+}
+
+span,
+strong {
+	font-size: 1.6rem;
+	color: var(--color-text);
+	font-weight: var(--font-regular);
+}
+
+/* Utilities */
+.text-center {
+	text-align: center;
+}
+
+html {
+	height:100%;
+}
+
+body {
+	margin:0;
+}
+
+.bg {
+	animation:slide 3s ease-in-out infinite alternate;
+	background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+	bottom:0;
+	left:-50%;
+	opacity:.5;
+	position:fixed;
+	right:-50%;
+	top:0;
+	z-index:-1;
+}
+
+.bg2 {
+	animation-direction:alternate-reverse;
+	animation-duration:4s;
+}
+
+.bg3 {
+	animation-duration:5s;
+}
+
+.content {
+	background-color:rgba(255,255,255,.8);
+	border-radius:.25em;
+	box-shadow:0 0 .25em rgba(0,0,0,.25);
+	box-sizing:border-box;
+	left:50%;
+	padding:10vmin;
+	position:fixed;
+	text-align:center;
+	top:50%;
+	transform:translate(-50%, -50%);
+}
+
+h1 {
+	font-family:monospace;
+}
+
+@keyframes slide {
+0% {
+	transform:translateX(-25%);
+}
+
+100% {
+	transform:translateX(25%);
+}
+	}
+/* Start */
+.auth {
+	width: 100%;
+	position: relative;
+	z-index: 1;
+	background: transparent;
+	height: 99vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: var(--font-base);
+}
+
+.auth::after {
+	z-index: -1;
+	opacity: 0.1;
+	content: "";
+	display: block;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	background-color: hsl(120, 100%, 35%);
+}
+
+.auth > .card {
+	width: 95%;
+	max-width: 65rem;
+}
+
+.auth_header h3 {
+	color: #008000;
+	font-weight: var(--font-bold);
+}
+
+.auth a {
+	padding-bottom: 2px;
+	text-decoration: none;
+	display: inline-block;
+	color: var(--color-main);
+	font-weight: var(--font-medium);
+}
+
+.auth_header a img {
+	width: 66px;
+	height: 66px;
+}
+
+.auth_header p {
+	font-weight: 400;
+	font-size: 1.8rem;
+	margin-bottom: 2rem;
+}
+
+.auth_form {
+	margin: 3rem 0;
+}
+
+.auth_alternative {
+	margin: 2rem 0 -2rem 0;
+}
+
+.auth .auth_form label,
+.auth .auth_alternative p {
+	font-size: 1.4rem;
+	font-weight: 500;
+	color: #008000;
+	text-align: center;
+}
+
+.auth .auth_alternative p {
+	font-size: 1.4rem;
+	font-weight: 500;
+	color: var(--color-darkgray);
+	text-align: center;
+}
+
+.auth .auth_actions {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 2.5rem 0;
+}
+
+.auth .auth_actions a {
+	text-decoration: underline;
+}
+
+.auth .auth_alternative a {
+	font-size: 2rem;
+	font-weight: 500;
+}
+
+.btn {
+	display: inline-block;
+	position: relative;
+	cursor: pointer;
+	background-color: var(--color-light);
+	font-weight: var(--font-medium);
+	color: var(--color-sub-lighter);
+	text-decoration: none;
+	padding: 1rem 2rem;
+	border-radius: 0.5rem;
+	border: none;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	font-size: 1.6rem;
+	outline-width: 0;
+	outline-color: transparent;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+	opacity: 0.85;
+}
+
+.btn-sub {
+	background-color: #008000;
+}
+
+.btn-lg {
+	font-size: 1.3rem;
+	padding: 1rem 4rem;
+	margin-top: 1rem;
+}
+
+.btn > svg {
+	fill: currentColor;
+	width: 1.7rem;
+	height: 1.7rem;
+}
+
+.messages {
+	list-style: none;
+	/* background: var(--color-white); */
+	padding: 0.5rem 3rem;
+	/* border: 2px solid var(--color-light); */
+	border-radius: 0.7rem;
+}
+
+.m-error {
+	color: #842029;
+	font-weight: (--font-medium);
+	/* background-color: #f8d7da;
+	border-color: #f5c2c7; */
+}
+
+.m-succes {
+	color: #055160;
+	background-color: #cff4fc;
+	border-color: #b6effb;
+}
+
+.m-info {
+	color: #664d03;
+	background-color: #fff3cd;
+	border-color: #ffecb5;
+}
+
+.card {
+	border-radius: 1rem;
+	background-color: var(--color-white);
+	border: 2px solid #008000;
+	width: auto;
+	height: auto;
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+	overflow: hidden;
+}
+
+.form {
+	display: block;
+}
+
+.form_field {
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
+}
+
+.form_label,
+.form_field > label {
+	display: block;
+	margin-bottom: 0.5rem;
+	color: var(--color-text);
+}
+
+input.input[type="text"],
+input.input[type="email"],
+input.input[type="password"],
+input.input[type="number"],
+textarea.input {
+	min-width: 24rem;
+	width: 100%;
+	padding: 1.2rem 1.5rem;
+	border-radius: 0.5rem;
+	border: 2px solid var(--color-light);
+	transition: all 0.3s ease-in-out;
+	background-color: var(--color-bg);
+	text-align: center;
+}
+
+input.input[type="text"]:focus,
+input.input[type="email"]:focus,
+input.input[type="password"]:focus,
+input.input[type="number"]:focus,
+input.input[type="text"]:active,
+input.input[type="email"]:active,
+input.input[type="password"]:active,
+input.input[type="number"]:active,
+select.input,
+textarea.input:focus,
+textarea.input:active {
+	outline: none;
+	border: 2px solid #008000;
+}
+
+@media screen and (min-width: 650px) {
+	.auth > .card {
+		padding: 5rem 5rem;
+		width: 95%;
+		max-width: 50rem;
+	}
+}
+
+.formPage .formWrapper {
+	list-style: none;
+	background: var(--color-white);
+	padding: 3.5rem 5rem;
+	border: 2px solid var(--color-light);
+	border-radius: 0.7rem;
+}
+
+.content-box {
+	width: 30%;
+	max-width: 85rem;
+	margin: 0 auto;
+}

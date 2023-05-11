@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- Meta Tags -->
+		<meta name="author" content="Reigen Onizuka" />
+		<meta name="description" content="Description of the Website" />
+
+		<!-- Website Icon -->
+		<link rel="icon" href="" type="image/x-icon" />
+
+		<!-- Website Title -->
+		<title>Title Here</title>
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" />
+
+		<!-- Swiper CSS -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+		<!-- Boxicon CSS -->
+		<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+		<!-- Main CSS -->
+		<link rel="stylesheet" href="static/css/style.css" />
+
+		<!-- Datatables CSS -->
+		<link rel="stylesheet" href="static/css/datatables.css" />
+	</head>
+
+	<body>
+		<header class="header" data-header>
+			<div class="container">
+				<a href="index.html" class="header_logo">
+					<img src="images/WESMAARRDEC.png" alt="WESMAARRDEC Logo" />
+					<h1>WESMAARRDEC</h1>
+				</a>
+
+				<button class="nav-toggle-btn" data-nav-toggler data-nav-toggle-btn aria-label="Toggle menu">
+					<span class="line line-1"></span>
+					<span class="line line-2"></span>
+				</button>
+
+				<nav class="navbar" data-navbar>
+					<ul role="list" class="navbar-list">
+						<li>
+							<a href="index.html" class="navbar-link">Home</a>
+						</li>
+
+						<li>
+							<a href="profile.html" class="navbar-link">Profile</a>
+						</li>
+
+						<li>
+							<a href="moa.html" class="navbar-link">MOA</a>
+						</li>
+
+						<li>
+							<a href="#" class="navbar-link">Event</a>
+						</li>
+
+						<li>
+							<a href="memorandum.html" class="navbar-link active">Memorandum</a>
+						</li>
+
+						<li>
+							<a href="#" class="navbar-link">Comm. Letter</a>
+						</li>
+
+						<li>
+							<a href="#" class="navbar-link">Special Order</a>
+						</li>
+
+						<li>
+							<a href="#" class="navbar-link">Logout</a>
+						</li>
+					</ul>
+				</nav>
+
+				<div class="overlay" data-nav-toggler data-overlay></div>
+			</div>
+		</header>
+
+		<main>
+			<div class="container">
+				<h2 class="head-text">WESMAARRDEC ARCHIVING</h2>
+
+				<div class="card shadow mb-4 mt-5">
+					<div class="dashboard-header card-header py-3 d-flex flex-row align-items-center justify-content-between">
+						<h4 class="font-weight-bold archives">Archives</h4>
+						<a href="form.html" class="add-docs d-none d-sm-inline-block btn btn-sm shadow-sm"> Upload Document </a>
+					</div>
+					<div class="card-body">
+						<div class="table-responsive">
+							<table class="table datatable" width="100%" cellspacing="0">
+								<thead>
+									<tr>
+										<th>File Name</th>
+										<th>Document Type</th>
+										<th>Date & Time</th>
+										<th>Download</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr class="files">
+										<td>Some Files.txt</td>
+										<td>Memo</td>
+										<td>January 26, 2023</td>
+										<td>
+											<span class="dl-docs d-none d-sm-inline-block btn btn-sm shadow-sm"> Download </span>
+											<div class="preview_item-details">
+												<h3 class="details_title">Check Title</h3>
+												<p class="details_description">Lorem test description.</p>
+												<ul class="details_info">
+													<li>Created - <span>January 26, 2023</span></li>
+													<li>Type - <span>Memo</span></li>
+													<li>Role - <span>Frontend</span></li>
+													<li>
+														View - <span><a href="#">www.domain.com</a></span>
+													</li>
+													<li>Created - <span>January 26, 2023</span></li>
+													<li>Type - <span>Memo</span></li>
+													<li>Role - <span>Frontend</span></li>
+													<li>
+														View - <span><a href="#">www.domain.com</a></span>
+													</li>
+												</ul>
+											</div>
+										</td>
+									</tr>
+									<tr class="files">
+										<td>Some Files.pdf</td>
+										<td>Memo</td>
+										<td>February 26, 2023</td>
+										<td>
+											<a href="#" class="dl-docs d-none d-sm-inline-block btn btn-sm shadow-sm"> Download </a>
+											<div class="preview_item-details">
+												<h3 class="details_title">Check 2</h3>
+												<p class="details_description">Lorem test description.</p>
+												<ul class="details_info">
+													<li>Created - <span>January 26, 2023</span></li>
+													<li>Type - <span>Memo</span></li>
+													<li>Role - <span>Frontend</span></li>
+													<li>
+														View - <span><a href="#">www.domain.com</a></span>
+													</li>
+													<li>Created - <span>January 26, 2023</span></li>
+													<li>Type - <span>Memo</span></li>
+													<li>Role - <span>Frontend</span></li>
+													<li>
+														View - <span><a href="#">www.domain.com</a></span>
+													</li>
+												</ul>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="preview_popup">
+				<div class="preview_popup-inner">
+					<div class="preview_popup-content grid">
+						<span class="preview_popup-close">
+							<i class="bx bx-x"></i>
+						</span>
+						<div class="preview_popup-info">
+							<div class="preview_popup-body">
+								<h3 class="details_title">The services provide for design</h3>
+								<p class="details_description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, at.</p>
+								<ul class="details_info">
+									<li>Created - <span>Dec 20, 2023</span></li>
+									<li>Technologies - <span>HTML CSS</span></li>
+									<li>Role - <span>Frontend</span></li>
+									<li>
+										View - <span><a href="#">www.domain.com</a></span>
+									</li>
+									<li>Created - <span>January 26, 2023</span></li>
+									<li>Type - <span>Memo</span></li>
+									<li>Role - <span>Frontend</span></li>
+									<li>
+										View - <span><a href="#">www.domain.com</a></span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<footer id="footer">
+			<div class="footer-top">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6 col-md-6 footer-info text-center justify-content-center">
+							<img src="images/WESMAARRDEC.png" alt="" />
+							<h3>About WESMAARRDEC</h3>
+							<p>
+								Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum
+								iaculis eu non diam phasellus.
+							</p>
+							<p class="mt-3">&copy; 2023 by WESMAARRDEC</p>
+						</div>
+
+						<div class="col-lg-2 col-md-6 footer-links">
+							<h4>Quick Navigation</h4>
+							<ul>
+								<li><i class="bx bx-chevron-right"></i><a href="#">Memorandum</a></li>
+								<li><i class="bx bx-chevron-right"></i><a href="#">Special Order</a></li>
+								<li><i class="bx bx-chevron-right"></i><a href="#">MOA</a></li>
+								<li><i class="bx bx-chevron-right"></i><a href="#">Comm Letter</a></li>
+							</ul>
+						</div>
+
+						<div class="col-lg-2 col-md-6 footer-links">
+							<h4>Stay Connected</h4>
+							<ul>
+								<li><i class="bx bxl-facebook"></i><a href="#">Facebook</a></li>
+								<li><i class="bx bxl-twitter"></i><a href="#">Twitter</a></li>
+								<li><i class="bx bxl-instagram"></i><a href="#">Instagram</a></li>
+							</ul>
+						</div>
+
+						<div class="col-lg-2 col-md-6 footer-contact">
+							<h4>Get In Touch</h4>
+							<p>
+								Normal Road, Baliwasan <br />
+								7000 Zamboanga City<br />
+								Philippines <br /><br />
+								<strong>Phone:</strong> +639XXXXXXXXX<br />
+								<strong>Email:</strong> wesmaardec@gmail.com<br />
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<!-- Swiper JS -->
+		<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+		<!-- Datatables JS -->
+		<script src="static/js/simple-datatables.js"></script>
+		<script src="static/js/tinymce.min.js"></script>
+		<script src="static/js/datatables.js"></script>
+
+		<!-- Main JS -->
+		<script src="static/js/main.js"></script>
+	</body>
+</html>
